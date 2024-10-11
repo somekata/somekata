@@ -25,8 +25,23 @@ header {
 
 .navigation,
 .main-content,
-.banner {
+.banner,
+.content {
   padding: 20px;
+}
+
+section.main-content {
+background-color: #fff;
+margin:0px 10px;
+}
+
+div.center-part {
+  width:60%;
+}
+
+dl.info {
+  padding: 0px 10px 0px 10px;
+  background-color: #fff;
 }
 
 .navigation {
@@ -95,4 +110,31 @@ footer {
       flex: 1 100%;
       margin-bottom: 20px;
   }
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background-color: rgb(255, 255, 255);
+  color: #050505;
+  text-align: left;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Tooltip appears above the link */
+  left: 40%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }

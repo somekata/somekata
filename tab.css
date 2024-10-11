@@ -1,0 +1,29 @@
+/* デフォルトではセクションを非表示 */
+.tabcontent {
+    display: none;
+    margin-bottom: 50px;
+}
+
+/* アクティブなタブのスタイル */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* タブのボタンのスタイル */
+.tab button {
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    margin-right: 5px;
+}
+
+/* タブのボタンがホバーされたときのスタイル */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+div.tab {
+    margin:10px;
+}
