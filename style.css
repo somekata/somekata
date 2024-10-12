@@ -131,13 +131,14 @@ footer {
 @media (max-width: 599px) {
   .container {
       width: 100%;
+      font-size: smaller;
   }
 }
 
 /* 画面幅が600px未満の場合のレイアウト */
 @media (max-width: 599px) {
   .title-container {
-      width: 118%;
+      width: 112%;
   }
 }
 
