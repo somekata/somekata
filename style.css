@@ -13,6 +13,8 @@ header {
   color: white;
   text-align: center;
   padding: 1px 0;
+  width:100%;
+  position: fixed;
 }
 
 /* メインコンテンツのレイアウト */
@@ -20,7 +22,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px;
+  padding: 90px 20px 90px 20px;
   width: 50vw; /* ビューポートの幅の50% */
   height: 100vh; /* ビューポートの高さの100% */
 }
@@ -113,32 +115,18 @@ footer {
       margin-bottom: 20px;
   }
 }
-/* 画面幅が600px以上の場合のレイアウト */
-@media (min-width: 600px) {
+/* 画面幅が769px以上の場合のレイアウト */
+@media (min-width: 769px) {
   .container {
       width: 96%;
   }
 }
 
-/* 画面幅が600px以上の場合のレイアウト */
-@media (min-width: 600px) {
-  .title-container {
-      width: 100%;
-  }
-}
-
-/* 画面幅が600px未満の場合のレイアウト */
-@media (max-width: 599px) {
+/* 画面幅が769未満の場合のレイアウト */
+@media (max-width: 768px) {
   .container {
       width: 100%;
       font-size: smaller;
-  }
-}
-
-/* 画面幅が600px未満の場合のレイアウト */
-@media (max-width: 599px) {
-  .title-container {
-      width: 112%;
   }
 }
 
