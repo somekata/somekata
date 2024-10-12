@@ -21,6 +21,8 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
+  width: 50vw; /* ビューポートの幅の50% */
+  height: 100vh; /* ビューポートの高さの100% */
 }
 
 .navigation,
@@ -109,6 +111,19 @@ footer {
   .banner {
       flex: 1 100%;
       margin-bottom: 20px;
+  }
+}
+/* 画面幅が600px以上の場合のレイアウト */
+@media (min-width: 600px) {
+  .container {
+      width: 96%;
+  }
+}
+
+/* 画面幅が600px未満の場合のレイアウト */
+@media (max-width: 599px) {
+  .container {
+      width: 100%;
   }
 }
 
