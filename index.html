@@ -6,6 +6,7 @@
     <title>染方史郎の細菌楽教室</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="tab.css" />
+    <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
   </head>
   <body>
     <header class="title-container">
@@ -42,6 +43,7 @@
             <button class="tablinks" onclick="openSection(event, 'Section3')">CONTACT</button>
             <button class="tablinks" onclick="openSection(event, 'Section4')">LINK</button>
             <button class="tablinks" onclick="openSection(event, 'Section5')">TERMs</button>
+            <button class="tablinks" onclick="openSection(event, 'Section6')">ARTICLE</button>
           </div>
         <div id="Section1" class="tabcontent" style="display: block;">
           <section class="main-content">
@@ -141,7 +143,22 @@
     　本用語集は、学生の学習を促進・支援する目的で作成しています。許可なく複製をしないようにお願いします。 内容の確認は行っていますが、誤りを含む場合があるため注意してください。 また、不定期に内容を更新することがあります。 医学用語集、Prefix/Suffix一覧、主要症候の3つの入り口を用意しています。表示数を10、25、50、100に変更することが可能です。用語、主区分、副区分、説明などでのソートが可能です。また、検索窓に入力すると、入力した文字列を含む行だけ抽出することができます。不定期に内容や仕様を更新することがあります。
   </p>
     </section>
-</div> 
+</div>
+<div id="Section6" class="tabcontent">
+  <section class="main-content">
+    <label for="docx-selector">記事を選ぶ：</label>
+<select id="docx-selector">
+  <option value="">-- 選択してください --</option>
+</select>
+
+<section class="main-content">
+  <h2>Article Viewer</h2>
+  <article id="docx-output">選択された記事がここに表示されます</article>
+</section>
+
+  </section>
+</div>
+
         </div>
 
 
@@ -202,8 +219,9 @@
     <footer>
       <p>&copy; 2024 染方史郎の細菌楽教室</p>
     </footer>
-
+    <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
     <script src="script.js"></script>
     <script src="tab.js"></script>
+    <script src="article.js"></script>
   </body>
 </html>
