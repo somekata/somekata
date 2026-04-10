@@ -1,157 +1,560 @@
-/* 全体のスタイル */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Kaisei+Tokumin:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* ===== DESIGN TOKENS ===== */
+:root {
+  --coral:   #FF5C5C;
+  --coral-d: #CC3A3A;
+  --sky:     #3BBDE4;
+  --sky-d:   #1E90B3;
+  --lime:    #6BCB77;
+  --lime-d:  #3E9948;
+  --amber:   #FFB347;
+  --amber-d: #D4831A;
+  --lavender:#B48EF5;
+  --ink:     #1A1A2E;
+  --ink-mid: #4A4A6A;
+  --ink-soft:#8888AA;
+  --cream:   #FFFBF4;
+  --paper:   #FFFFFF;
+  --border:  rgba(26,26,46,0.10);
+
+  /* layout */
+  --hh: 72px;
+  --fh: 50px;
+  --nav-w: 170px;
+  --ban-w: 150px;
+
+  /* tiles */
+  --r:  14px;
+  --rs: 8px;
+
+  /* effects */
+  --glow-coral: 0 0 20px rgba(255,92,92,0.25);
+  --glow-sky:   0 0 20px rgba(59,189,228,0.25);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
 body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  font-family: 'Zen Maru Gothic', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 15px;
+  min-height: 100vh;
+  /* subtle dot pattern */
+  background-image: radial-gradient(circle, rgba(59,189,228,0.10) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
 }
 
-/* ヘッダーのスタイル */
-header {
-  background-color: #4CAF50;
-  color: white;
-  text-align: center;
-  padding: 1px 0;
-  width:100%;
+/* ===== HEADER ===== */
+header.title-container {
   position: fixed;
-}
-
-/* メインコンテンツのレイアウト */
-.container {
+  top: 0; left: 0; right: 0;
+  height: var(--hh);
+  z-index: 200;
+  background: var(--ink);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 90px 20px 90px 20px;
-  width: 50vw; /* ビューポートの幅の50% */
-  height: 100vh; /* ビューポートの高さの100% */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.navigation,
-.main-content,
-.banner,
-.content {
-  padding: 20px;
+/* animated bar behind title */
+header.title-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -55deg,
+    transparent,
+    transparent 18px,
+    rgba(255,255,255,0.03) 18px,
+    rgba(255,255,255,0.03) 36px
+  );
+  animation: slide 12s linear infinite;
 }
 
-section.main-content {
-background-color: #fff;
-margin:0px 10px;
-}
+@keyframes slide { to { background-position: 200px 0; } }
 
-div.center-part {
-  width:60%;
-}
-
-dl.info {
-  padding: 0px 10px 0px 10px;
-  background-color: #fff;
-}
-
-.navigation {
-  flex: 1;
-  background-color: #f9f9f9;
-}
-
-.main-content {
-  flex: 2;
-  text-align: left;
-}
-
-.banner {
-  flex: 1;
-  background-color: #f9f9f9;
-}
-
-/* ナビゲーションメニュー */
-.navigation ul,
-.banner ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.navigation li,
-.banner li {
-  margin: 10px 0;
-}
-
-.navigation a,
-.banner a {
-  text-decoration: none;
-  color: #4CAF50;
-  display: block;
-  padding: 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.navigation a:hover,
-.banner a:hover {
-  background-color: #45a049;
-  color: white;
-}
-
-/* フッターのスタイル */
-footer {
-  background-color: #4CAF50;
-  color: white;
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-  .container {
-      flex-direction: column;
-  }
-
-  .navigation,
-  .main-content,
-  .banner {
-      flex: 1 100%;
-      margin-bottom: 20px;
-  }
-}
-/* 画面幅が769px以上の場合のレイアウト */
-@media (min-width: 769px) {
-  .container {
-      width: 96%;
-  }
-}
-
-/* 画面幅が769未満の場合のレイアウト */
-@media (max-width: 768px) {
-  .container {
-      width: 100%;
-      font-size: smaller;
-  }
-}
-
-.tooltip-container {
+header.title-container h1 {
+  font-family: 'Kaisei Tokumin', 'Hiragino Mincho ProN', serif;
+  font-size: clamp(1.1rem, 2.8vw, 1.7rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.10em;
   position: relative;
-  display: inline-block;
+  text-align: center;
+  line-height: 1.2;
 }
+
+/* accent blobs */
+header.title-container h1::before,
+header.title-container h1::after {
+  content: '';
+  display: inline-block;
+  width: 28px; height: 28px;
+  background: var(--coral);
+  border-radius: 50% 30% 50% 30%;
+  vertical-align: middle;
+  margin: 0 12px;
+  animation: wobble 3s ease-in-out infinite;
+}
+header.title-container h1::after {
+  background: var(--sky);
+  animation-delay: 1.5s;
+}
+
+@keyframes wobble {
+  0%,100% { border-radius: 50% 30% 50% 30%; transform: rotate(0deg) scale(1); }
+  50%      { border-radius: 30% 50% 30% 50%; transform: rotate(20deg) scale(1.1); }
+}
+
+/* ===== MAIN LAYOUT ===== */
+main {
+  padding-top: var(--hh);
+  padding-bottom: var(--fh);
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: var(--nav-w) 1fr var(--ban-w);
+  gap: 18px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 22px 18px;
+  align-items: start;
+}
+
+/* ===== NAV ===== */
+.navigation {
+  grid-column: 1;
+  position: sticky;
+  top: calc(var(--hh) + 22px);
+}
+
+.navigation ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+
+.navigation a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--ink-mid);
+  background: var(--paper);
+  border: 2px solid var(--border);
+  border-radius: var(--rs);
+  transition: all 0.18s ease;
+  letter-spacing: 0.02em;
+}
+
+.navigation a:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+  transform: translateX(4px);
+  box-shadow: 4px 4px 0 var(--coral);
+}
+
+/* ===== CENTER ===== */
+.center-part {
+  grid-column: 2;
+  min-width: 0;
+}
+
+/* ===== BANNER ===== */
+.banner {
+  grid-column: 3;
+  position: sticky;
+  top: calc(var(--hh) + 22px);
+}
+
+.banner ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+.banner a {
+  display: block;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 0.75rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--border);
+  border-radius: var(--rs);
+  letter-spacing: 0.04em;
+  transition: all 0.18s ease;
+}
+
+.banner a:hover {
+  background: var(--amber);
+  border-color: var(--amber-d);
+  box-shadow: 3px 3px 0 var(--amber-d);
+  transform: translate(-2px,-2px);
+}
+
+/* ===== SECTION CARD ===== */
+section.main-content {
+  background: var(--paper);
+  border: 2px solid var(--border);
+  border-radius: var(--r);
+  padding: 26px 30px;
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* accent stripe top */
+section.main-content::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--coral), var(--sky), var(--lime), var(--amber));
+  background-size: 300% 100%;
+  animation: rainbow 4s linear infinite;
+}
+
+@keyframes rainbow {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+section.main-content h2 {
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.h2-badge {
+  display: inline-block;
+  background: var(--coral);
+  color: #fff;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+section.main-content p { color: var(--ink-mid); margin-bottom: 10px; }
+
+section.main-content hr {
+  border: none;
+  border-top: 2px dashed rgba(59,189,228,0.35);
+  margin: 18px 0;
+}
+
+/* ===== LINKS ===== */
+section.main-content a {
+  color: var(--sky-d);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(59,189,228,0.4);
+  transition: all 0.15s;
+}
+section.main-content a:hover {
+  color: var(--coral);
+  border-bottom-color: var(--coral);
+}
+
+/* ===== NEWS ===== */
+.news-list { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+
+.news-item {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  padding: 10px 14px;
+  background: rgba(59,189,228,0.06);
+  border-left: 3px solid var(--sky);
+  border-radius: 0 var(--rs) var(--rs) 0;
+}
+
+.news-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--coral);
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: rgba(255,92,92,0.10);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.news-text { font-size: 0.88rem; color: var(--ink-mid); }
+
+/* ===== BAIKENZ section ===== */
+.baikens-hero {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.baikens-hero a { border: none; }
+
+.baikens-hero img {
+  border-radius: var(--rs);
+  box-shadow: 4px 4px 0 var(--border);
+  transition: all 0.2s ease;
+  max-height: 130px;
+  width: auto;
+}
+
+.baikens-hero img:hover {
+  transform: rotate(-3deg) scale(1.06);
+  box-shadow: 6px 6px 0 var(--coral);
+}
+
+.baikens-desc {
+  flex: 1;
+  min-width: 200px;
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+}
+
+/* ===== LINK SECTION ===== */
+.link-group { margin-bottom: 20px; }
+
+.link-group-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 900;
+  font-size: 0.8rem;
+  color: var(--paper);
+  background: var(--ink-mid);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 0.06em;
+}
+
+.link-group ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+
+.link-group li a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(59,189,228,0.06);
+  border: 1.5px solid rgba(59,189,228,0.20);
+  border-radius: var(--rs);
+  font-size: 0.87rem;
+  color: var(--sky-d);
+  font-weight: 700;
+  border-bottom: none;
+  transition: all 0.15s;
+}
+
+.link-group li a:hover {
+  background: var(--sky);
+  color: #fff;
+  border-color: var(--sky);
+  transform: translateX(4px);
+}
+
+.link-group li a::before {
+  content: '→';
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* ===== TERMS ===== */
+.terms-entry {
+  padding: 14px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--rs);
+  margin-bottom: 10px;
+  background: rgba(107,203,119,0.04);
+  border-left: 3px solid var(--lime);
+}
+
+.terms-entry h3 {
+  font-size: 0.88rem;
+  font-weight: 900;
+  color: var(--lime-d);
+  margin-bottom: 6px;
+}
+
+.terms-entry p { font-size: 0.85rem; color: var(--ink-mid); margin: 0; }
+
+/* ===== ARTICLE SECTION ===== */
+.article-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.article-controls label {
+  font-weight: 900;
+  font-size: 0.82rem;
+  color: var(--ink-mid);
+  white-space: nowrap;
+}
+
+#docx-selector {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: var(--rs);
+  background: var(--paper);
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.18s;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234A4A6A' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+#docx-selector:focus {
+  border-color: var(--sky);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59,189,228,0.20);
+}
+
+#docx-output {
+  min-height: 80px;
+  color: var(--ink-mid);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  padding-top: 4px;
+}
+
+/* mammoth出力を整形 */
+#docx-output h1, #docx-output h2 {
+  font-family: 'Kaisei Tokumin', serif;
+  color: var(--ink);
+  margin: 16px 0 8px;
+}
+#docx-output h1 { font-size: 1.2rem; }
+#docx-output h2 { font-size: 1rem; }
+#docx-output p { margin-bottom: 10px; }
+#docx-output a { color: var(--sky-d); font-weight: 700; }
+
+.article-note {
+  margin-top: 16px;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(180,142,245,0.08);
+  border-radius: var(--rs);
+  border: 1px solid rgba(180,142,245,0.20);
+}
+
+/* ===== TOOLTIP ===== */
+.tooltip-container { position: relative; display: inline-block; }
 
 .tooltip-text {
   visibility: hidden;
-  width: 200px;
-  background-color: rgb(255, 255, 255);
-  color: #050505;
+  width: 190px;
+  background: var(--ink);
+  color: #fff;
   text-align: left;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: var(--rs);
+  padding: 10px 13px;
   position: absolute;
-  z-index: 1;
-  bottom: 125%; /* Tooltip appears above the link */
-  left: 40%;
+  z-index: 300;
+  bottom: 115%;
+  left: 50%;
   transform: translateX(-50%);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.2s;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.20);
 }
 
 .tooltip-container:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: var(--fh);
+  background: var(--ink);
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  z-index: 200;
+}
+
+footer strong { color: var(--coral); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  :root { --nav-w: 140px; --ban-w: 120px; }
+}
+
+@media (max-width: 680px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 12px;
+  }
+  .navigation, .center-part, .banner { grid-column: 1; }
+
+  .navigation {
+    position: static;
+  }
+  .navigation ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .navigation a {
+    padding: 6px 11px;
+    font-size: 0.76rem;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .banner { position: static; }
+  .banner ul { flex-direction: row; flex-wrap: wrap; gap: 5px; }
+  .banner a { font-size: 0.72rem; padding: 7px 10px; }
+
+  section.main-content { padding: 18px 16px; }
+  section.main-content h2 { font-size: 1.05rem; }
+
+  .baikens-hero img { max-height: 100px; }
+
+  :root { --hh: 58px; }
+  header.title-container h1 { font-size: 1rem; }
+  header.title-container h1::before,
+  header.title-container h1::after { width: 18px; height: 18px; margin: 0 8px; }
 }

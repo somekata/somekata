@@ -1,168 +1,372 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>染方史郎の細菌楽教室</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Kaisei+Tokumin:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="tab.css" />
-    <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
   </head>
   <body>
+    <!-- ===== HEADER ===== -->
     <header class="title-container">
       <h1>染方史郎の細菌楽教室</h1>
     </header>
 
     <main>
       <div class="container">
-        <!-- ナビゲーション -->
+        <!-- ===== NAV ===== -->
         <nav class="navigation">
           <ul>
-            <li><a href="../column/index.html">コラム</a></li>
-            <li><a href="../calculator/aado2cal.html">計算機</a></li>
+            <li><a href="../column/index.html">📝 コラム</a></li>
+            <li><a href="../calculator/aado2cal.html">🧮 計算機</a></li>
             <li>
               <a
                 href="../virtualpcr/index.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                >virtual PCR</a
+                >🔬 virtual PCR</a
               >
             </li>
-            <li><a href="../Terminology/index.html">用語集</a></li>
-            <li><a href="../bac3min/index.html">3分細菌楽</a></li>
-            <li><a href="../bacteriologyquest/index.html">細菌学クエスト</a></li>
-            <li><a href="../quiz/index.html">感染症クイズ</a></li>
+            <li><a href="../Terminology/index.html">📖 用語集</a></li>
+            <li><a href="../bac3min/index.html">⏱ 3分細菌楽</a></li>
+            <li>
+              <a href="../bacteriologyquest/index.html">🗺 細菌学クエスト</a>
+            </li>
+            <li><a href="../quiz/index.html">❓ 感染症クイズ</a></li>
           </ul>
         </nav>
 
-        <!-- メインコンテンツ -->
+        <!-- ===== CENTER ===== -->
         <div class="center-part">
+          <!-- タブバー -->
           <div class="tab">
-            <button class="tablinks active" onclick="openSection(event, 'Section1')">MAIN</button>
-            <button class="tablinks" onclick="openSection(event, 'Section2')">BAIKINs</button>
-            <button class="tablinks" onclick="openSection(event, 'Section3')">CONTACT</button>
-            <button class="tablinks" onclick="openSection(event, 'Section4')">LINK</button>
-            <button class="tablinks" onclick="openSection(event, 'Section5')">TERMs</button>
-            <button class="tablinks" onclick="openSection(event, 'Section6')">ARTICLE</button>
+            <button
+              class="tablinks active"
+              onclick="openSection(event, 'Section1')"
+            >
+              MAIN
+            </button>
+            <button class="tablinks" onclick="openSection(event, 'Section2')">
+              BAIKINs
+            </button>
+            <button class="tablinks" onclick="openSection(event, 'Section3')">
+              CONTACT
+            </button>
+            <button class="tablinks" onclick="openSection(event, 'Section4')">
+              LINK
+            </button>
+            <button class="tablinks" onclick="openSection(event, 'Section5')">
+              TERMs
+            </button>
+            <button class="tablinks" onclick="openSection(event, 'Section6')">
+              ARTICLE
+            </button>
           </div>
-        <div id="Section1" class="tabcontent" style="display: block;">
-          <section class="main-content">
-            <h2>ようこそ　細菌楽教室へ</h2>
-            <p>
-              　細菌を楽しみながら学ぶという活動をしています。いくつかのホームページを管理しており、他のホームページへもリンクしますので、併せて活用してください。
-            </p>
-            <hr>
-            <p>
-              <dl class="info">
-                <h3 style="padding-top:5px;">新着情報</h3>
-                <dt>2025年1月8日</dt>
-                <dd>LINKにコンテンツを掲載しました。</dd>
-                <dt>2024年10月10日</dt>
-                  <dd>ページを公開しました。</dd>
-              </dl>
-            </p>
-          </section>
-        </div>         
-        <div id="Section2" class="tabcontent">
-          <section class="main-content">
-          <h2>バイキンズのご紹介</h2>
-          <p>　書籍や冊子などで既にご存知かもしれませんが、バイキンズというオリジナルキャラクターを作っています。「LINEスタンプ」や「バイキンズ🄬カード」といった学習用教材も作っています。学びを楽しくするために、イラストを多用するよう心がけています。</p>
-          </section>
-          <section class="main-content" style="margin-top: 10px;">
-            <a href="https://store.line.me/stickershop/product/1307378/ja" target="_blank" rel="noopener noreferrer"><img src="img/linestamp.png" height="100px"></a>
-            <a href="https://somekata.blogspot.com/p/321-3000-2778-url-httpsdocs.html" target="_blank" rel="noopener noreferrer"><img src="img/baikinscard.png" height="100px"></a>
-            <p>
-              　左はLINEスタンプ、右は「バイキンズ®カード」です。バイキンズ®カードは知る人ぞ知る伝説のカード。バイキン（細菌や真菌）をキャラクター化した「バイキンズ®」を掲載したトレーディングカード風のカードです。微生物学習用のカードとして作成していますが、今回、販売に際して、ポーカーのような遊び方を考えました。つまり、遊びながら学べるすぐれもの。32種類のバイキンズ®カードを1セットとして特製紙ケースに入れ、遊び方の説明書を同梱しています。<br>
-              　写真をクリックすると、それぞれリンクに跳びます。
-            </p>
-          </section>
-      </div>
-      <div id="Section3" class="tabcontent">
-        <section class="main-content">
-        <h2>お問い合わせ</h2>
-        <p>　個別のお問い合わせには回答しておりません。</p>
-        </section>
-    </div> 
-    <div id="Section4" class="tabcontent">
-      <section class="main-content">
-      <h2>お役立ちリンク</h2>
-      <p>ガイドライン関連
-        <ul>
-        <li><a href="https://jssti.jp/pdf/syphilis-medical_guide.pdf" target="_blank">梅毒診療ガイド2018</a></li>
-      </ul>
-    </p>
-      <p>ワクチン関連
-        <ul>
-          <li><a href="https://www.know-vpd.jp/index.php" target="_blank">KNOW VPD</a></li>
-          <li><a href="http://www.kankyokansen.org/uploads/uploads/files/jsipc/vaccine-guideline_04-2.pdf" target="_blank">医療関係者のためのワクチンガイドライン 第4版</a></li>
-          <li>
-            <a href="http://www.wakutin.or.jp/medical/" target="_blank">予防接種に関するQ&A集</a>
-          </li>
-        </ul>
-      </p>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p>雑誌
-        <ul>
-          <li><a href="
-            https://www.nejm.jp/" target="_blank">New England Journal of Medicine</a></li>
-          <li><a href="
-            https://www.natureasia.com/ja-jp/nature/toc/" target="_blank">Nature</a></li>
-          <li><a href="
-            http://www.cell.com/cell/archive" target="_blank">Cell</a></li>
-        </ul>
-      </p>
-      <p>文献検索・整理
-        <ul>
-          <li><a href="https://elicit.com/" target="_blank">Elicit</a></li>
-          <li><a href="https://www.zotero.org/" target="_blank">zotero</a></li>
-          <li><a href="https://researchrabbitapp.com/home" target="_blank">ResearchRabbit</a></li>
-          <li><a href="https://www.litmaps.com/" target="_blank">Litmaps</a></li>
-        </ul>
-      </p>
 
-      </section>
-  </div> 
-  <div id="Section5" class="tabcontent">
-    <section class="main-content">
-    <h2>用語集</h2>
-    <p>
-      　<a href="../Terminology/index.html" target="_blank" rel="noopener noreferrer">用語集</a>からもアクセスできますが、用語集の説明をこちらに掲載しておきます。以下からもダイレクトでアクセス可能です。
-    </p>
-    <p>
-      <ul>
-      <li>感染症を知るために必要な医学用語は<a href="../Terminology/Terminology.html" target="_blank" rel="noopener noreferrer">こちら</a><br>
-      　医学領域で頻用される英語をまとめました。また、有用な情報を参考として掲載しています。例えば、anemiaのところでは貧血の種類などについてまとめています。検索窓に、「動物」と入力すると、avianの項目にある動物を表す形容詞が表示されます。</li>
-      <li>Prefix/Suffix Listは<a href="../Terminology/prefixSuffix.html" target="_blank" rel="noopener noreferrer">こちら</a><br>
-      　医学領域で頻用される接頭・接尾語を掲載しています。</li>
-      <li>主要症候の一覧表は<a href="../Terminology/majorSymptom.html" target="_blank" rel="noopener noreferrer">こちら</a></li>
-    </ul>
-  </p>
-  <p>
-    　本用語集は、学生の学習を促進・支援する目的で作成しています。許可なく複製をしないようにお願いします。 内容の確認は行っていますが、誤りを含む場合があるため注意してください。 また、不定期に内容を更新することがあります。 医学用語集、Prefix/Suffix一覧、主要症候の3つの入り口を用意しています。表示数を10、25、50、100に変更することが可能です。用語、主区分、副区分、説明などでのソートが可能です。また、検索窓に入力すると、入力した文字列を含む行だけ抽出することができます。不定期に内容や仕様を更新することがあります。
-  </p>
-    </section>
-</div>
-<div id="Section6" class="tabcontent">
-  <section class="main-content">
-    <label for="docx-selector">記事を選ぶ：</label>
-<select id="docx-selector">
-  <option value="">-- 選択してください --</option>
-</select>
+          <!-- ── MAIN ── -->
+          <div id="Section1" class="tabcontent" style="display: block">
+            <section class="main-content">
+              <h2><span class="h2-badge">WELCOME</span>細菌楽教室へようこそ</h2>
+              <p>
+                細菌を楽しみながら学ぶ、それがここ「細菌楽教室」のコンセプトです。複数のウェブサイトを運営しており、各ページへのリンクもご用意していますので、ぜひ併せて活用してください。
+              </p>
+              <hr />
+              <p
+                style="
+                  font-weight: 900;
+                  font-size: 0.82rem;
+                  color: var(--ink-mid);
+                  margin-bottom: 10px;
+                  letter-spacing: 0.06em;
+                "
+              >
+                🔔 新着情報
+              </p>
+              <div class="news-list">
+                <div class="news-item">
+                  <span class="news-date">2026-04-10</span>
+                  <span class="news-text"
+                    >Claudeを使って全面改修しました。</span
+                  >
+                </div>
+                <div class="news-item">
+                  <span class="news-date">2026-04-10</span>
+                  <span class="news-text"
+                    >ARTICLEページに新しい記事を追加しました。</span
+                  >
+                </div>
+                <div class="news-item">
+                  <span class="news-date">2025-01-08</span>
+                  <span class="news-text"
+                    >LINKページにコンテンツを追加しました。</span
+                  >
+                </div>
+                <div class="news-item">
+                  <span class="news-date">2024-10-10</span>
+                  <span class="news-text">サイトを公開しました。</span>
+                </div>
+              </div>
+            </section>
+          </div>
 
-<section class="main-content">
-  <article id="docx-output">選択された記事がここに表示されます</article>
-  <p>※記事の作成に際して ChatGPT-4o を活用していますが、内容を確認したうえで掲載しています。</p>
-</section>
+          <!-- ── BAIKINs ── -->
+          <div id="Section2" class="tabcontent">
+            <section class="main-content">
+              <h2><span class="h2-badge">CHARACTER</span>バイキンズのご紹介</h2>
+              <div class="baikens-hero">
+                <a
+                  href="https://store.line.me/stickershop/product/1307378/ja"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="img/linestamp.png" alt="バイキンズ LINEスタンプ" />
+                </a>
+                <a
+                  href="https://somekata.blogspot.com/p/321-3000-2778-url-httpsdocs.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src="img/baikinscard.png" alt="バイキンズ®カード" />
+                </a>
+                <div class="baikens-desc">
+                  <p>
+                    左は <strong>LINEスタンプ</strong>、右は
+                    <strong>バイキンズ®カード</strong>
+                    です。画像をクリックするとリンク先に移動します。
+                  </p>
+                </div>
+              </div>
+              <p>
+                書籍や冊子でご存知の方もいるかもしれませんが、「バイキンズ」というオリジナルキャラクターを制作しています。細菌や真菌をキャラクター化した「バイキンズ®」を使った学習用教材で、LINEスタンプのほか、トレーディングカード風の「バイキンズ®カード」も展開しています。
+              </p>
+              <p>
+                バイキンズ®カードは32種類を1セットとして特製紙ケースに収め、ポーカー風の遊び方説明書を同梱しています。学びながら遊べる、ちょっとマニアックな一品です。
+              </p>
+            </section>
+          </div>
 
-  </section>
-</div>
+          <!-- ── CONTACT ── -->
+          <div id="Section3" class="tabcontent">
+            <section class="main-content">
+              <h2><span class="h2-badge">CONTACT</span>お問い合わせ</h2>
+              <p>
+                個別のお問い合わせには対応しておりません。あらかじめご了承ください。
+              </p>
+            </section>
+          </div>
 
+          <!-- ── LINK ── -->
+          <div id="Section4" class="tabcontent">
+            <section class="main-content">
+              <h2><span class="h2-badge">LINK</span>お役立ちリンク集</h2>
+
+              <div class="link-group">
+                <p class="link-group-title">📋 ガイドライン</p>
+                <ul>
+                  <li>
+                    <a
+                      href="https://jssti.jp/pdf/syphilis-medical_guide.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >梅毒診療ガイド 2018</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="link-group">
+                <p class="link-group-title">💉 ワクチン関連</p>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.know-vpd.jp/index.php"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >KNOW VPD</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.kankyokansen.org/uploads/uploads/files/jsipc/vaccine-guideline_04-2.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >医療関係者のためのワクチンガイドライン 第4版</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.wakutin.or.jp/medical/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >予防接種に関するQ&amp;A集</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="link-group">
+                <p class="link-group-title">📰 主要ジャーナル</p>
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.nejm.jp/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >New England Journal of Medicine</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.natureasia.com/ja-jp/nature/toc/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Nature</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.cell.com/cell/archive"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Cell</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="link-group">
+                <p class="link-group-title">🔍 文献検索・整理ツール</p>
+                <ul>
+                  <li>
+                    <a
+                      href="https://elicit.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Elicit</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.zotero.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Zotero</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://researchrabbitapp.com/home"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >ResearchRabbit</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.litmaps.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Litmaps</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+
+          <!-- ── TERMs ── -->
+          <div id="Section5" class="tabcontent">
+            <section class="main-content">
+              <h2><span class="h2-badge">TERMS</span>用語集のご案内</h2>
+              <p>
+                <a
+                  href="../Terminology/index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >用語集トップ</a
+                >からもアクセスできます。以下のリンクから各コンテンツに直接アクセスすることも可能です。
+              </p>
+
+              <div class="terms-entry">
+                <h3>📚 医学用語集</h3>
+                <p>
+                  <a
+                    href="../Terminology/Terminology.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >こちらへ</a
+                  >　——　医学領域で頻用される英語表現をまとめています。各項目には補足情報も掲載。たとえば「anemia」の項には貧血の分類を、「avian」の項には動物を表す形容詞を収録しています。検索窓に「動物」と入力するとその項目が表示されます。
+                </p>
+              </div>
+
+              <div class="terms-entry">
+                <h3>🔤 Prefix / Suffix List</h3>
+                <p>
+                  <a
+                    href="../Terminology/prefixSuffix.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >こちらへ</a
+                  >　——　医学領域で頻用される接頭語・接尾語を一覧で掲載しています。
+                </p>
+              </div>
+
+              <div class="terms-entry">
+                <h3>🩺 主要症候の一覧表</h3>
+                <p>
+                  <a
+                    href="../Terminology/majorSymptom.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >こちらへ</a
+                  >　——　主要な症候をまとめた一覧です。
+                </p>
+              </div>
+
+              <p
+                style="
+                  margin-top: 14px;
+                  font-size: 0.83rem;
+                  color: var(--ink-soft);
+                "
+              >
+                ※本用語集は学習支援を目的として作成しています。無断複製はご遠慮ください。内容は随時更新されますが、誤りを含む可能性があります。ご了承のうえご活用ください。
+              </p>
+            </section>
+          </div>
+
+          <!-- ── ARTICLE ── -->
+          <div id="Section6" class="tabcontent">
+            <section class="main-content">
+              <h2><span class="h2-badge">ARTICLE</span>記事を読む</h2>
+              <div class="article-controls">
+                <label for="docx-selector">記事を選ぶ：</label>
+                <select id="docx-selector">
+                  <option value="">-- 選択してください --</option>
+                </select>
+              </div>
+              <article id="docx-output">
+                <span style="color: var(--ink-soft)"
+                  >記事を選択すると、ここに内容が表示されます。</span
+                >
+              </article>
+              <p class="article-note">
+                ⚠️ 記事の作成に際して 生成AI
+                を活用していますが、内容を確認したうえで掲載しています。ただし、誤りが含まれる可能性もあるため、参考程度にご活用ください。
+              </p>
+            </section>
+          </div>
         </div>
+        <!-- /center-part -->
 
-
-        <!-- バナー -->
+        <!-- ===== BANNER ===== -->
         <aside class="banner">
           <ul>
             <li>
@@ -171,56 +375,58 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="tooltip-container"
-                >Fil-GAP
-                <span class="tooltip-text">周辺知識のほか、ゲームや問題などを掲載しています。</span>
+              >
+                Fil-GAP
+                <span class="tooltip-text"
+                  >周辺知識のほか、ゲームや問題などを掲載しています。</span
+                >
               </a>
             </li>
-            
-            
             <li>
               <a
                 href="https://plicy.net/User/81386"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="tooltip-container"
-                >PLiCy
-                <span class="tooltip-text">PLiCyというサイトで、オリジナルゲームを紹介しています。</span>
+              >
+                PLiCy
+                <span class="tooltip-text"
+                  >PLiCyというサイトで、オリジナルゲームを紹介しています。</span
+                >
               </a>
             </li>
-            <li>              
-              <a
-              href="#"
-              class="tooltip-container"
-              >バナー
-              <span class="tooltip-text">作成中です。<br>しばらくお待ちください。</span>
-              </a>
+            <li>
+              <a href="#" class="tooltip-container"
+                >バナー<span class="tooltip-text"
+                  >作成中です。しばらくお待ちください。</span
+                ></a
+              >
             </li>
-            <li>              
-              <a
-              href="#"
-              class="tooltip-container"
-              >バナー
-              <span class="tooltip-text">作成中です。<br>しばらくお待ちください。</span>
-              </a>
+            <li>
+              <a href="#" class="tooltip-container"
+                >バナー<span class="tooltip-text"
+                  >作成中です。しばらくお待ちください。</span
+                ></a
+              >
             </li>
-            <li>              
-              <a
-              href="#"
-              class="tooltip-container"
-              >バナー
-              <span class="tooltip-text">作成中です。<br>しばらくお待ちください。</span>
-              </a>
+            <li>
+              <a href="#" class="tooltip-container"
+                >バナー<span class="tooltip-text"
+                  >作成中です。しばらくお待ちください。</span
+                ></a
+              >
             </li>
           </ul>
         </aside>
       </div>
+      <!-- /container -->
     </main>
 
     <footer>
-      <p>&copy; 2024 染方史郎の細菌楽教室</p>
+      <p><strong>染方史郎の細菌楽教室</strong>&ensp;©&thinsp;2024</p>
     </footer>
+
     <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
-    <script src="script.js"></script>
     <script src="tab.js"></script>
     <script src="article.js"></script>
   </body>
